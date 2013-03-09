@@ -33,8 +33,11 @@
       var i = 0;
       $("#koala").click( function() {
         i += 1;
+        h = $(window).height() - $(this).height();
         $(this).animate({ top: '0px' });
-        $(this).animate({ top: '498px' });
+        $(this).animate({ top: h });
+        pluralize = ( i == 1 ? "o" : "i")
+        $("p#salti").text("Il koala ha fatto " + i + " salt" + pluralize);
       });
     });
   </script>
@@ -56,6 +59,10 @@
 
           <p>Ciao! <br/>
             Benvenuti nella mia homepage! Vi saluta anche il mio koala!<br/>
+          </p>
+
+          <p id="salti">
+            Il koala ha fatto 0 salti
           </p>
 
           <img src="images/koala.jpeg" id="koala" width="200"/>
